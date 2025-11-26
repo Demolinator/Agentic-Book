@@ -1,7 +1,7 @@
 <!--
 Sync Impact Report:
-- Version change: [none] → 1.0.0 (initial constitution)
-- Modified principles: N/A (new constitution)
+- Version change: [none] → 1.0.1 (clarifications to match hackathon requirements)
+- Modified principles: N/A
 - Added sections: Core Principles, Technical Stack, Quality Requirements, Spec-Driven Development and Reusable Intelligence, Governance
 - Removed sections: N/A
 - Templates requiring updates:
@@ -10,6 +10,7 @@ Sync Impact Report:
   - ✅ tasks-template.md (aligned with constitution principles)
   - ✅ All command templates verified for consistency
 - Follow-up TODOs: None
+- Changes: Explicitly require both OpenAI Agents SDK and ChatKit SDK (not "or"), clarify reusable intelligence as bonus marks, clarify book topic focus
 -->
 
 # AI-Driven and Spec-Driven Faculty Hackathon Constitution
@@ -52,7 +53,7 @@ All major architecture decisions (framework choice, RAG strategy, chunking strat
 - **Frontend/Book**: Docusaurus for the book site and documentation, deployed to GitHub Pages
 - **Backend API**: Python FastAPI for the backend API
 - **Vector Database**: Qdrant Cloud Free Tier as the vector database for storing book embeddings
-- **AI Services**: OpenAI for embeddings and chat completions (Agents SDK / ChatKit or standard API)
+- **AI Services**: OpenAI for embeddings and chat completions. MUST use both OpenAI Agents SDK and OpenAI ChatKit SDK as required by hackathon specifications
 - **Source Control**: GitHub for source control and CI/CD where possible
 - **Configuration**: Environment variables or `.env` files for all API keys and secrets (never hard-coded)
 
@@ -62,7 +63,8 @@ This stack balances educational value, free-tier availability, and production-re
 ## Quality Requirements
 
 ### Docusaurus Book Standards
-- The book MUST be organized into clear chapters covering: AI-Driven Development, Spec-Driven Development, RAG fundamentals, implementation guide, how to use the chatbot, and future work
+- The book MUST be about "AI-Driven and Spec-Driven Development" and explain these concepts, RAG fundamentals, implementation guide, how to use the chatbot, and future work
+- The book MUST be organized into clear chapters covering: Introduction to AI-Driven Development, Spec-Driven Development, RAG fundamentals, implementation guide, how to use the chatbot, and future work
 - The site MUST build and run locally with a simple, documented command sequence
 - The site MUST deploy successfully to GitHub Pages
 - All chapters MUST be internally linked and navigable
@@ -99,8 +101,8 @@ Every significant feature (book, RAG backend, chatbot UI, selected-text mode, ag
 ### Prompt History Capture
 When particularly effective prompts are discovered (for generating book content, RAG prompts, or agent skills), they MUST be captured as prompt history records (PHRs) for reuse. PHRs document what prompts work vs fail, creating a searchable playbook for future AI collaboration.
 
-### Reusable Agent Skills Design
-Where appropriate, design reusable skills/subagents (for example: summarizing sections, generating quiz questions, explaining terms) using clear persona, questions, and principles (P+Q+P pattern) so they can be reused in future projects. Skills MUST be documented with their persona, analytical questions, and decision principles.
+### Reusable Agent Skills Design (Bonus Marks)
+Design reusable intelligence using Claude Code Subagents and Agent Skills. Where appropriate, create reusable skills/subagents (for example: summarizing sections, generating quiz questions, explaining terms) using clear persona, questions, and principles (P+Q+P pattern) so they can be reused in future projects. Skills MUST be documented with their persona, analytical questions, and decision principles. This component qualifies for extra marks in hackathon evaluation.
 
 ## Governance
 
@@ -127,4 +129,4 @@ If any feature requires violating Constitution principles (e.g., adding unnecess
 2. Justified with specific problem statements and rejected simpler alternatives
 3. Reviewed and approved before implementation
 
-**Version**: 1.0.0 | **Ratified**: 2025-01-27 | **Last Amended**: 2025-01-27
+**Version**: 1.0.1 | **Ratified**: 2025-01-27 | **Last Amended**: 2025-01-27
