@@ -59,7 +59,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",  # Local development
         "http://localhost:3001",  # Alternative local port
-        "https://talal.github.io",  # GitHub Pages production
+        "https://demolinator.github.io",  # GitHub Pages production
+        "https://talal.github.io",  # Legacy GitHub Pages (if still in use)
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
