@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { signup, storeToken, SignupData } from '../lib/auth';
 import './AuthForms.css';
 
 const SignupForm: React.FC = () => {
+  const baseUrl = useBaseUrl('/');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -84,7 +86,8 @@ const SignupForm: React.FC = () => {
       storeToken(response.token);
 
       // Redirect to textbook homepage
-      window.location.href = '/docs/intro';
+      // Redirect to textbook (use baseUrl for GitHub Pages compatibility)
+      window.location.href = `${baseUrl}docs/intro`;
 
     } catch (err: any) {
       setError(err.message || 'Signup failed. Please try again.');
