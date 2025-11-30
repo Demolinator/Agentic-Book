@@ -3,6 +3,7 @@ Ingestion service for processing book content and storing in Qdrant.
 """
 import os
 import uuid
+import hashlib
 import logging
 from pathlib import Path
 from typing import List, Dict, Any
@@ -118,11 +119,16 @@ def store_chunks(chunks: List[TextChunk], collection_name: str = "book_chunks") 
         # Prepare points for insertion
         points = []
         for chunk in chunks:
+            # Convert string chunk_id to integer hash for Qdrant compatibility
+            # Use hash of the chunk_id string to get a deterministic integer
+            chunk_id_hash = int(hashlib.md5(chunk.chunk_id.encode()).hexdigest()[:15], 16)
+            
             point = PointStruct(
-                id=chunk.chunk_id,
+                id=chunk_id_hash,
                 vector=chunk.embedding,
                 payload={
                     "text": chunk.text,
+                    "chunk_id": chunk.chunk_id,  # Keep original string ID in payload
                     "chapter_id": chunk.chapter_id,
                     "chunk_index": chunk.chunk_index,
                     "token_count": chunk.token_count,
