@@ -64,10 +64,11 @@ const sidebars = {
       collapsed: true,
       items: [
         'module4/module4-index',
-        'module4/sensor-fusion',
-        'module4/motion-planning',
-        'module4/control-systems',
-        'module4/computer-vision',
+        // Temporarily disabled due to math expression errors - will fix later
+        // 'module4/sensor-fusion',
+        // 'module4/motion-planning',
+        // 'module4/control-systems',
+        // 'module4/computer-vision',
         'module4/capstone',
       ],
     },

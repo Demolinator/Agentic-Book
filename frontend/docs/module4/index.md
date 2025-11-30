@@ -148,6 +148,6 @@ When deploying integrated systems:
 
 ---
 
-**Next Chapter**: [System Integration Architecture](./system-integration)
+**Next Chapter**: [Capstone Project](module4/capstone)
 
 **Estimated Time Commitment**: 20-25 hours per week for 4 weeks (80-100 hours total)
