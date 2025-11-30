@@ -7,14 +7,24 @@
  * or configure it via Docusaurus's customFields in docusaurus.config.js
  */
 const getApiBaseUrl = () => {
-  // Check if running in browser and window variable is set
+  // Check if running in browser and window variable is set (highest priority)
   if (typeof window !== 'undefined' && window.API_BASE_URL) {
     return window.API_BASE_URL;
   }
   
-  // Default to localhost for development
-  // In production, this should be set via window.API_BASE_URL or docusaurus.config.js
-  return 'http://localhost:8000';
+  // Check if we're in development (localhost) or production
+  const isDevelopment = typeof window !== 'undefined' && 
+    (window.location.hostname === 'localhost' || 
+     window.location.hostname === '127.0.0.1' ||
+     window.location.hostname.includes('localhost'));
+  
+  // Use Railway URL for production, localhost for development
+  if (isDevelopment) {
+    return 'http://localhost:8000';
+  }
+  
+  // Replace with your actual Railway backend URL
+  return 'https://agentic-book-production.up.railway.app';
 };
 
 const config = {
