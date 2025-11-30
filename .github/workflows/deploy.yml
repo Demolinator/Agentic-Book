@@ -2,7 +2,7 @@ name: Deploy to Production
 
 on:
   push:
-    branches: [ "gh-pages" ]
+    branches: [ "002-physical-ai-book", "main" ]
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        ref: gh-pages  # Explicitly checkout gh-pages branch
+        ref: 002-physical-ai-book  # Checkout source branch, deploy to gh-pages
 
     - name: Set up Node.js
       uses: actions/setup-node@v4

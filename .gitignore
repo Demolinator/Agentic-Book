@@ -10,10 +10,11 @@ dist/
 downloads/
 eggs/
 .eggs/
-# Python lib directories (not frontend/src/lib)
-backend/lib/
+# Python lib directories
 lib/
 lib64/
+# Exception: allow frontend/src/lib (contains auth.ts)
+!frontend/src/lib/
 parts/
 sdist/
 var/
