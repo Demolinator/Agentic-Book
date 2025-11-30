@@ -11,10 +11,10 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // GitHub Pages configuration
-  url: 'https://talal.github.io', // GitHub username
-  baseUrl: '/Hackathon/', // Repository name
-  organizationName: 'talal', // GitHub username
-  projectName: 'Hackathon', // Repository name
+  url: 'https://demolinator.github.io', // GitHub username
+  baseUrl: '/Agentic-Book/', // Repository name
+  organizationName: 'Demolinator', // GitHub username
+  projectName: 'Agentic-Book', // Repository name
   deploymentBranch: 'gh-pages', // Branch for deployment
 
   onBrokenLinks: 'throw',
@@ -39,6 +39,13 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/talal/Hackathon/tree/002-physical-ai-book/frontend/',
+          // Temporarily exclude Module 4 files with math expression errors
+          exclude: [
+            '**/module4/sensor-fusion.md',
+            '**/module4/motion-planning.md',
+            '**/module4/control-systems.md',
+            '**/module4/computer-vision.md',
+          ],
         },
         blog: false,
         theme: {
