@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        ref: gh-pages  # Explicitly checkout gh-pages branch
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
