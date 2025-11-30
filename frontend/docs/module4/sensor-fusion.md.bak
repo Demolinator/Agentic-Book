@@ -27,15 +27,15 @@ This chapter covers the mathematical foundations of sensor fusion, focusing on t
 
 ### 2.1.1 The State Estimation Problem
 
-Consider a robot with state $\mathbf{x}_t \in \mathbb{R}^n$ at time $t$. The state might include:
+Consider a robot with state **x**_t ∈ ℝ^n at time t. The state might include:
 
-$$
-\mathbf{x}_t = \begin{bmatrix} x \\ y \\ \theta \\ v_x \\ v_y \\ \omega \end{bmatrix} \quad \text{(position, orientation, velocities)}
-$$
+```
+x_t = [x, y, θ, v_x, v_y, ω]  // (position, orientation, velocities)
+```
 
 We have:
-- **Process model**: $\mathbf{x}_t = f(\mathbf{x}_{t-1}, \mathbf{u}_t, \mathbf{w}_t)$, where $\mathbf{u}_t$ is control input and $\mathbf{w}_t$ is process noise
-- **Measurement model**: $\mathbf{z}_t = h(\mathbf{x}_t, \mathbf{v}_t)$, where $\mathbf{z}_t$ is sensor observation and $\mathbf{v}_t$ is measurement noise
+- **Process model**: x_t = f(x_{t-1}, u_t, w_t), where u_t is control input and w_t is process noise
+- **Measurement model**: z_t = h(x_t, v_t), where z_t is sensor observation and v_t is measurement noise
 
 **Bayes' Rule** for state estimation:
 
