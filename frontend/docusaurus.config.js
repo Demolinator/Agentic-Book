@@ -62,10 +62,6 @@ const config = {
       image: 'img/physical-ai-social-card.jpg',
       navbar: {
         title: 'Physical AI & Humanoid Robotics',
-        logo: {
-          alt: 'Physical AI Logo',
-          src: 'img/logo.png',
-        },
         items: [
           {
             type: 'docSidebar',
