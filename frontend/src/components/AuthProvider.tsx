@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { getToken, removeToken, getMe, UserProfile } from '../lib/auth';
 
 interface AuthContextType {
@@ -24,6 +25,7 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  const baseUrl = useBaseUrl('/');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -61,7 +63,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     removeToken();
     setIsAuthenticated(false);
     setUser(null);
-    window.location.href = '/signin';
+    // Redirect to signin (use baseUrl for GitHub Pages compatibility)
+    window.location.href = `${baseUrl}signin`;
   };
 
   const refreshUser = async () => {
