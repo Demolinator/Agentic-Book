@@ -8,17 +8,20 @@
 ## 🎯 Deployment Strategy
 
 **Phase 1** (NOW - 30 minutes):
+
 1. Get API credentials
 2. Deploy backend to Railway
 3. Deploy frontend to GitHub Pages
 4. Test production
 
 **Phase 2** (After testing - 2 hours):
+
 1. Add translation UI to frontend
 2. Redeploy frontend
 3. Create history records
 
 **Phase 3** (Final - 30 minutes):
+
 1. Record demo video
 2. Submit to hackathon
 
@@ -27,78 +30,92 @@
 ## ✅ Pre-Deployment Verification
 
 ### Backend Readiness
-- [x] **Tests passing**: 12/12 ✅
-- [x] **Translation API**: Integrated ✅
-- [x] **Railway config**: `backend/railway.toml` ✅
-- [x] **Render config**: `backend/render.yaml` ✅
-- [x] **Environment variables**: Documented in `.env.example` ✅
-- [x] **Dependencies**: `requirements.txt` complete ✅
+
+- [X] **Tests passing**: 12/12 ✅
+- [X] **Translation API**: Integrated ✅
+- [X] **Railway config**: `backend/railway.toml` ✅
+- [X] **Render config**: `backend/render.yaml` ✅
+- [X] **Environment variables**: Documented in `.env.example` ✅
+- [X] **Dependencies**: `requirements.txt` complete ✅
 
 ### Frontend Readiness
-- [x] **Tests passing**: 20/20 ✅
-- [x] **Build works**: Docusaurus configured ✅
-- [x] **GitHub Pages**: Workflow ready ✅
-- [x] **Config file**: `src/config.js` exists ✅
-- [x] **All 22 chapters**: Content complete ✅
+
+- [X] **Tests passing**: 20/20 ✅
+- [X] **Build works**: Docusaurus configured ✅
+- [X] **GitHub Pages**: Workflow ready ✅
+- [X] **Config file**: `src/config.js` exists ✅
+- [X] **All 22 chapters**: Content complete ✅
 
 ### Infrastructure
-- [x] **CI/CD**: `.github/workflows/test.yml` ✅
-- [x] **CI/CD**: `.github/workflows/deploy.yml` ✅
-- [x] **Documentation**: Deployment guides ✅
-- [x] **Skills**: 4 Claude Code skills ✅
+
+- [X] **CI/CD**: `.github/workflows/test.yml` ✅
+- [X] **CI/CD**: `.github/workflows/deploy.yml` ✅
+- [X] **Documentation**: Deployment guides ✅
+- [X] **Skills**: 4 Claude Code skills ✅
 
 ---
 
 ## 📋 API Credentials Needed
 
 ### 1. OpenAI API Key
+
 **Get from**: https://platform.openai.com/api-keys
 
 **Format**: `sk-proj-...`
 
 **Cost**: ~$0.30 for initial ingestion + ~$0.10 for demo
 
-**Your Key**: ___________________________________________
+**Your Key**: __________sk-proj-BPuZOK9Ptf60PAOqHC67x-bXMc6zbZa5W9HULZ7rOt0GsySurJwa62HFFLloz54zQdQ6fhHCwRT3BlbkFJZWYLlU4IQl6I1qtecKvQkq3UgeonhYsWJl1vd470rgFohtwMpyCMoDwn0z1peE22O5HCrox3sA_________________________________
 
 ---
 
 ### 2. Qdrant Vector Database
+
 **Get from**: https://cloud.qdrant.io
 
 **Sign up**: Free tier (1GB storage, perfect for this project)
 
 **Create**:
+
 - Cluster name: `physical-ai-textbook`
 - Region: Choose closest to you
 - Free tier
 
 **Your Credentials**:
-- Cluster URL: ___________________________________________
-- API Key: ___________________________________________
+
+- Cluster URL: https://bacc3c63-c66c-479c-9cf4-de185b896c3a.europe-west3-0.gcp.cloud.qdrant.io___________________________________________
+- API Key:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.vnwdZ_D6RbsZXkfrrTvVqRnvVu7fYLEr5ZEGg9GlbbM ___________________________________________
 
 ---
 
 ### 3. Neon Serverless Postgres
+
 **Get from**: https://neon.tech
 
 **Sign up**: Free tier (3GB storage)
 
 **Create**:
+
 - Project name: `physical-ai-textbook`
 - Database name: `textbook`
 - Region: Choose closest
 
 **Your Connection String**:
+
 ```
 postgresql://user:password@host.region.neon.tech/dbname?sslmode=require
 ```
 
-___________________________________________
+postgresql://neondb_owner:npg_cZPV2R0HUsEz@ep-cool-hat-ahli2fjo-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+
+---
 
 ---
 
 ### 4. Auth Secret
+
 **Generate** (Windows PowerShell):
+
 ```powershell
 [System.Convert]::ToBase64String([System.Security.Cryptography.RandomNumberGenerator]::GetBytes(32))
 ```
@@ -107,18 +124,22 @@ ___________________________________________
 
 **Your Secret** (32+ characters):
 
-___________________________________________
+B5pRRCY-17xRwXe-fhGGaz17iCqY0D_vvZtja2lVYcw
+
+---
 
 ---
 
 ## 🚀 Quick Deployment Commands
 
 ### Install Railway CLI
+
 ```bash
 npm i -g @railway/cli
 ```
 
 ### Deploy Backend
+
 ```bash
 cd backend
 railway login
@@ -133,6 +154,7 @@ railway domain  # Get your backend URL
 ```
 
 ### Update Frontend & Deploy
+
 ```bash
 # Edit frontend/src/config.js with your Railway URL
 # Then:
@@ -142,6 +164,7 @@ git push origin gh-pages
 ```
 
 ### Ingest Documentation
+
 ```bash
 curl -X POST https://your-app.railway.app/ingest
 ```
@@ -151,6 +174,7 @@ curl -X POST https://your-app.railway.app/ingest
 ## 🧪 Production Testing Checklist
 
 ### Backend Tests
+
 ```bash
 # Replace YOUR-RAILWAY-URL with actual URL
 
@@ -170,6 +194,7 @@ curl -X POST https://YOUR-RAILWAY-URL/translate \
 ```
 
 ### Frontend Tests
+
 - [ ] Homepage loads
 - [ ] All 22 chapters accessible
 - [ ] Navigation works
@@ -183,26 +208,31 @@ curl -X POST https://YOUR-RAILWAY-URL/translate \
 ### Production URLs
 
 **Backend (Railway)**:
+
 ```
 https://_____________________
 ```
 
 **Frontend (GitHub Pages)**:
+
 ```
 https://_____________________
 ```
 
 **Qdrant Dashboard**:
+
 ```
 https://cloud.qdrant.io/dashboard
 ```
 
 **Neon Dashboard**:
+
 ```
 https://console.neon.tech/app/projects
 ```
 
 **Railway Dashboard**:
+
 ```
 https://railway.app/dashboard
 ```
@@ -211,37 +241,39 @@ https://railway.app/dashboard
 
 ## ⏱️ Time Estimates
 
-| Task | Time |
-|------|------|
-| Get API credentials | 10 min |
-| Deploy backend (Railway) | 10 min |
-| Update frontend config | 2 min |
-| Deploy frontend (GitHub Pages) | 5 min |
-| Ingest documentation | 2 min |
-| Test production | 10 min |
-| **PHASE 1 TOTAL** | **~40 min** |
-| | |
-| Add translation UI (frontend) | 2 hours |
-| Redeploy frontend | 5 min |
-| Create history records | 20 min |
-| **PHASE 2 TOTAL** | **~2.5 hours** |
-| | |
-| Record demo video | 30 min |
-| Submit to hackathon | 10 min |
-| **PHASE 3 TOTAL** | **~40 min** |
-| | |
-| **GRAND TOTAL** | **~4 hours** |
+| Task                           | Time                 |
+| ------------------------------ | -------------------- |
+| Get API credentials            | 10 min               |
+| Deploy backend (Railway)       | 10 min               |
+| Update frontend config         | 2 min                |
+| Deploy frontend (GitHub Pages) | 5 min                |
+| Ingest documentation           | 2 min                |
+| Test production                | 10 min               |
+| **PHASE 1 TOTAL**        | **~40 min**    |
+|                                |                      |
+| Add translation UI (frontend)  | 2 hours              |
+| Redeploy frontend              | 5 min                |
+| Create history records         | 20 min               |
+| **PHASE 2 TOTAL**        | **~2.5 hours** |
+|                                |                      |
+| Record demo video              | 30 min               |
+| Submit to hackathon            | 10 min               |
+| **PHASE 3 TOTAL**        | **~40 min**    |
+|                                |                      |
+| **GRAND TOTAL**          | **~4 hours**   |
 
 ---
 
 ## 💰 Cost Breakdown
 
 ### One-Time Costs
+
 - OpenAI ingestion: ~$0.30
 - OpenAI demo testing: ~$0.10
 - **Total one-time**: **~$0.40**
 
 ### Ongoing (Free Tier)
+
 - Railway: Free ($5/month credit)
 - Neon: Free (3GB)
 - Qdrant: Free (1GB)
@@ -253,7 +285,9 @@ https://railway.app/dashboard
 ## 🆘 Common Issues & Fixes
 
 ### Issue: Railway build fails
+
 **Fix**:
+
 ```bash
 # Check logs
 railway logs
@@ -263,7 +297,9 @@ railway logs
 ```
 
 ### Issue: Frontend shows "Failed to fetch"
+
 **Fix**:
+
 ```bash
 # Verify backend URL in frontend/src/config.js
 # Check CORS settings in backend/src/api/main.py
@@ -271,7 +307,9 @@ railway logs
 ```
 
 ### Issue: Ingestion fails
+
 **Fix**:
+
 ```bash
 # Verify OPENAI_API_KEY is set
 railway variables | grep OPENAI
@@ -281,7 +319,9 @@ curl -H "api-key: YOUR_KEY" https://your-qdrant-url:6333/collections
 ```
 
 ### Issue: RAG returns no results
+
 **Fix**:
+
 ```bash
 # Re-run ingestion
 curl -X POST https://your-app.railway.app/ingest
@@ -306,12 +346,14 @@ curl -X POST https://your-app.railway.app/ingest
 ## 🎬 Ready to Deploy!
 
 ### Start with Step 1:
+
 ```bash
 npm i -g @railway/cli
 railway login
 ```
 
 ### Then follow:
+
 `DEPLOYMENT_EXECUTION_PLAN.md`
 
 ---

@@ -8,7 +8,9 @@
       "Bash(npm test:*)",
       "Bash(timeout 30 bash:*)",
       "Bash(timeout 15 bash:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
