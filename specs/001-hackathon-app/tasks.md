@@ -23,14 +23,14 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure: backend/ and frontend/ directories at repository root
-- [ ] T002 [P] Initialize backend Python project: Create backend/requirements.txt with FastAPI, uvicorn, qdrant-client, openai, python-dotenv, tiktoken, pytest, httpx
-- [ ] T003 [P] Initialize frontend Docusaurus project: Run `npx create-docusaurus@latest frontend classic` in repository root
+- [x] T001 Create project structure: backend/ and frontend/ directories at repository root
+- [x] T002 [P] Initialize backend Python project: Create backend/requirements.txt with FastAPI, uvicorn, qdrant-client, openai, python-dotenv, tiktoken, pytest, httpx
+- [x] T003 [P] Initialize frontend Docusaurus project: Run `npx create-docusaurus@latest frontend classic` in repository root
 - [ ] T004 [P] Create backend/.env.example with OPENAI_API_KEY, QDRANT_URL, QDRANT_API_KEY placeholders
-- [ ] T005 [P] Create backend/.gitignore to exclude venv/, .env, __pycache__/, *.pyc
-- [ ] T006 [P] Create frontend/.gitignore for Docusaurus defaults (node_modules/, .docusaurus/, build/)
-- [ ] T007 [P] Create root .gitignore combining backend and frontend ignores
-- [ ] T008 Create root README.md with project overview and links to quickstart.md
+- [x] T005 [P] Create backend/.gitignore to exclude venv/, .env, __pycache__/, *.pyc
+- [x] T006 [P] Create frontend/.gitignore for Docusaurus defaults (node_modules/, .docusaurus/, build/)
+- [x] T007 [P] Create root .gitignore combining backend and frontend ignores
+- [x] T008 Create root README.md with project overview and links to quickstart.md
 
 ---
 
@@ -40,17 +40,17 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T009 Create backend/src/ directory structure: models/, services/, api/, config.py
-- [ ] T010 [P] Create backend/src/config.py for environment variable loading (OPENAI_API_KEY, QDRANT_URL, QDRANT_API_KEY)
-- [ ] T011 [P] Create backend/src/api/main.py with FastAPI app instance and CORS middleware configuration
-- [ ] T012 [P] Create backend/src/api/__init__.py
-- [ ] T013 [P] Create backend/src/models/__init__.py
-- [ ] T014 [P] Create backend/src/services/__init__.py
+- [x] T009 Create backend/src/ directory structure: models/, services/, api/, config.py
+- [x] T010 [P] Create backend/src/config.py for environment variable loading (OPENAI_API_KEY, QDRANT_URL, QDRANT_API_KEY)
+- [x] T011 [P] Create backend/src/api/main.py with FastAPI app instance and CORS middleware configuration
+- [x] T012 [P] Create backend/src/api/__init__.py
+- [x] T013 [P] Create backend/src/models/__init__.py
+- [x] T014 [P] Create backend/src/services/__init__.py
 - [ ] T015 Implement error handling infrastructure in backend/src/api/main.py (exception handlers for Qdrant and OpenAI errors)
-- [ ] T016 Setup logging configuration in backend/src/config.py (structured logging for debugging)
-- [ ] T017 Create frontend/src/components/ directory for React components
-- [ ] T018 [P] Configure Docusaurus for GitHub Pages deployment in frontend/docusaurus.config.js (url, baseUrl, organizationName, projectName)
-- [ ] T019 [P] Create frontend/src/config.js for API_BASE_URL configuration (defaults to http://localhost:8000)
+- [x] T016 Setup logging configuration in backend/src/config.py (structured logging for debugging)
+- [x] T017 Create frontend/src/components/ directory for React components
+- [x] T018 [P] Configure Docusaurus for GitHub Pages deployment in frontend/docusaurus.config.js (url, baseUrl, organizationName, projectName)
+- [x] T019 [P] Create frontend/src/config.js for API_BASE_URL configuration (defaults to http://localhost:8000)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -64,14 +64,14 @@
 
 ### Implementation for User Story 1
 
-- [ ] T020 [US1] Create frontend/docs/intro.md with Introduction chapter content about AI-Driven and Spec-Driven Development
-- [ ] T021 [US1] Create frontend/docs/ai-driven-development.md with AI-Driven Development chapter content
-- [ ] T022 [US1] Create frontend/docs/spec-driven-development.md with Spec-Driven Development chapter content
-- [ ] T023 [US1] Create frontend/docs/rag-fundamentals.md with RAG Fundamentals chapter content
-- [ ] T024 [US1] Create frontend/docs/implementation-guide.md with Implementation Guide chapter content
-- [ ] T025 [US1] Create frontend/docs/chatbot-usage.md with How to Use the Chatbot chapter content
-- [ ] T026 [US1] Create frontend/docs/future-work.md with Future Work chapter content
-- [ ] T027 [US1] Configure sidebar navigation in frontend/sidebars.js to include all 7 chapters in order
+- [x] T020 [US1] Create frontend/docs/intro.md with Introduction chapter content about AI-Driven and Spec-Driven Development
+- [x] T021 [US1] Create frontend/docs/ai-driven-development.md with AI-Driven Development chapter content
+- [x] T022 [US1] Create frontend/docs/spec-driven-development.md with Spec-Driven Development chapter content
+- [x] T023 [US1] Create frontend/docs/rag-fundamentals.md with RAG Fundamentals chapter content
+- [x] T024 [US1] Create frontend/docs/implementation-guide.md with Implementation Guide chapter content
+- [x] T025 [US1] Create frontend/docs/chatbot-usage.md with How to Use the Chatbot chapter content
+- [x] T026 [US1] Create frontend/docs/future-work.md with Future Work chapter content
+- [x] T027 [US1] Configure sidebar navigation in frontend/sidebars.js to include all 7 chapters in order
 - [ ] T028 [US1] Add internal links between chapters in markdown content (cross-references using Docusaurus link syntax)
 - [ ] T029 [US1] Test local build: Run `npm run build` in frontend/ directory and verify no errors
 - [ ] T030 [US1] Test local server: Run `npm start` in frontend/ directory and verify all chapters accessible
@@ -90,25 +90,25 @@
 
 ### Implementation for User Story 2
 
-- [ ] T033 [US2] Create backend/src/models/chunk.py with TextChunk model (chunk_id, text, embedding, chapter_id, chunk_index, token_count, metadata)
-- [ ] T034 [US2] Create backend/src/models/question.py with Question model (question_id, question_text, mode, timestamp, session_id)
-- [ ] T035 [US2] Create backend/src/models/answer.py with Answer model (answer_id, answer_text, sources, confidence, question_id, timestamp, model_used, error_message)
-- [ ] T036 [US2] Create backend/src/models/source_citation.py with SourceCitation model (chunk_id, chapter_id, relevance_score, snippet)
-- [ ] T037 [US2] Create backend/src/services/ingestion_service.py with chunk_text() function (semantic chunking: 200-300 tokens, 50 token overlap using tiktoken)
-- [ ] T038 [US2] Create backend/src/services/ingestion_service.py with create_embeddings() function (calls OpenAI text-embedding-3-small API)
-- [ ] T039 [US2] Create backend/src/services/ingestion_service.py with store_chunks() function (stores chunks in Qdrant Cloud collection "book_chunks")
-- [ ] T040 [US2] Create backend/src/services/ingestion_service.py with ingest_book() function (orchestrates: read markdown files, chunk, embed, store)
-- [ ] T041 [US2] Create backend/src/services/rag_service.py with query_qdrant() function (vector similarity search, top 5 chunks, cosine similarity)
-- [ ] T042 [US2] Create backend/src/services/rag_service.py with generate_answer() function (uses OpenAI ChatKit SDK with retrieved chunks as context)
-- [ ] T043 [US2] Create backend/src/services/rag_service.py with ask_question() function (orchestrates: embed question, query Qdrant, generate answer, return with sources)
-- [ ] T044 [US2] Create backend/src/api/endpoints/ingest.py with POST /ingest endpoint (calls ingestion_service.ingest_book())
-- [ ] T045 [US2] Create backend/src/api/endpoints/ask.py with POST /ask endpoint (calls rag_service.ask_question(), handles errors gracefully)
-- [ ] T046 [US2] Create backend/src/api/endpoints/ping.py with GET /ping endpoint (health check)
-- [ ] T047 [US2] Register all endpoints in backend/src/api/main.py (include_router for ingest, ask, ping)
-- [ ] T048 [US2] Create frontend/src/components/Chatbot.tsx with chat interface (input field, send button, message display area)
-- [ ] T049 [US2] Create frontend/src/components/Chatbot.tsx with API integration (calls /ask endpoint, displays answers and source citations)
-- [ ] T050 [US2] Embed Chatbot component in frontend/docs/chatbot-usage.md using MDX syntax
-- [ ] T051 [US2] Add CSS styling for Chatbot component in frontend/src/css/custom.css (responsive, user-friendly design)
+- [x] T033 [US2] Create backend/src/models/chunk.py with TextChunk model (chunk_id, text, embedding, chapter_id, chunk_index, token_count, metadata)
+- [x] T034 [US2] Create backend/src/models/question.py with Question model (question_id, question_text, mode, timestamp, session_id)
+- [x] T035 [US2] Create backend/src/models/answer.py with Answer model (answer_id, answer_text, sources, confidence, question_id, timestamp, model_used, error_message)
+- [x] T036 [US2] Create backend/src/models/source_citation.py with SourceCitation model (chunk_id, chapter_id, relevance_score, snippet)
+- [x] T037 [US2] Create backend/src/services/ingestion_service.py with chunk_text() function (semantic chunking: 200-300 tokens, 50 token overlap using tiktoken)
+- [x] T038 [US2] Create backend/src/services/ingestion_service.py with create_embeddings() function (calls OpenAI text-embedding-3-small API)
+- [x] T039 [US2] Create backend/src/services/ingestion_service.py with store_chunks() function (stores chunks in Qdrant Cloud collection "book_chunks")
+- [x] T040 [US2] Create backend/src/services/ingestion_service.py with ingest_book() function (orchestrates: read markdown files, chunk, embed, store)
+- [x] T041 [US2] Create backend/src/services/rag_service.py with query_qdrant() function (vector similarity search, top 5 chunks, cosine similarity)
+- [x] T042 [US2] Create backend/src/services/rag_service.py with generate_answer() function (uses OpenAI ChatKit SDK with retrieved chunks as context)
+- [x] T043 [US2] Create backend/src/services/rag_service.py with ask_question() function (orchestrates: embed question, query Qdrant, generate answer, return with sources)
+- [x] T044 [US2] Create backend/src/api/endpoints/ingest.py with POST /ingest endpoint (calls ingestion_service.ingest_book())
+- [x] T045 [US2] Create backend/src/api/endpoints/ask.py with POST /ask endpoint (calls rag_service.ask_question(), handles errors gracefully)
+- [x] T046 [US2] Create backend/src/api/endpoints/ping.py with GET /ping endpoint (health check)
+- [x] T047 [US2] Register all endpoints in backend/src/api/main.py (include_router for ingest, ask, ping)
+- [x] T048 [US2] Create frontend/src/components/Chatbot.tsx with chat interface (input field, send button, message display area)
+- [x] T049 [US2] Create frontend/src/components/Chatbot.tsx with API integration (calls /ask endpoint, displays answers and source citations)
+- [x] T050 [US2] Embed Chatbot component in frontend/docs/chatbot-usage.md using MDX syntax
+- [x] T051 [US2] Add CSS styling for Chatbot component in frontend/src/css/custom.css (responsive, user-friendly design)
 - [ ] T052 [US2] Test ingestion: Run POST /ingest endpoint and verify chunks stored in Qdrant
 - [ ] T053 [US2] Test RAG query: Ask question via /ask endpoint and verify answer with sources
 - [ ] T054 [US2] Test error handling: Simulate Qdrant/OpenAI errors and verify user-friendly error messages
@@ -125,14 +125,14 @@
 
 ### Implementation for User Story 3
 
-- [ ] T055 [US3] Create backend/src/api/endpoints/ask_selected.py with POST /ask_selected endpoint (accepts question and context, uses OpenAI ChatKit SDK with only provided context)
-- [ ] T056 [US3] Register /ask_selected endpoint in backend/src/api/main.py
-- [ ] T057 [US3] Create frontend/src/components/SelectedTextHandler.tsx with text selection detection (window.getSelection() API)
-- [ ] T058 [US3] Create frontend/src/components/SelectedTextHandler.tsx with "Ask about this selection" button (appears when text is selected)
-- [ ] T059 [US3] Create frontend/src/components/SelectedTextHandler.tsx with context passing (passes selected text to Chatbot component)
-- [ ] T060 [US3] Update frontend/src/components/Chatbot.tsx to accept selectedText prop and call /ask_selected endpoint when selectedText is provided
+- [x] T055 [US3] Create backend/src/api/endpoints/ask_selected.py with POST /ask_selected endpoint (accepts question and context, uses OpenAI ChatKit SDK with only provided context)
+- [x] T056 [US3] Register /ask_selected endpoint in backend/src/api/main.py
+- [x] T057 [US3] Create frontend/src/components/SelectedTextHandler.tsx with text selection detection (window.getSelection() API)
+- [x] T058 [US3] Create frontend/src/components/SelectedTextHandler.tsx with "Ask about this selection" button (appears when text is selected)
+- [x] T059 [US3] Create frontend/src/components/SelectedTextHandler.tsx with context passing (passes selected text to Chatbot component)
+- [x] T060 [US3] Update frontend/src/components/Chatbot.tsx to accept selectedText prop and call /ask_selected endpoint when selectedText is provided
 - [ ] T061 [US3] Embed SelectedTextHandler component in all frontend/docs/*.md files using MDX
-- [ ] T062 [US3] Add CSS styling for selected-text UI in frontend/src/css/custom.css (highlight style, button positioning)
+- [x] T062 [US3] Add CSS styling for selected-text UI in frontend/src/css/custom.css (highlight style, button positioning)
 - [ ] T063 [US3] Test selected-text mode: Select text, ask question, verify answer uses only selected context (no Qdrant query performed)
 - [ ] T064 [US3] Test validation: Verify empty or too-short selected text is rejected with clear message
 - [ ] T065 [US3] Test error handling: Verify clear message when answer cannot be found in selected context
@@ -149,20 +149,20 @@
 
 ### Implementation for User Story 4
 
-- [ ] T066 [US4] Create backend/src/services/skills/summarize_section.py with SummarizeSection skill (persona: educational content specialist, questions: what are key points, what is main message, principles: concise, accurate, educational)
-- [ ] T067 [US4] Create backend/src/services/skills/generate_quiz.py with GenerateQuizQuestions skill (persona: educational assessment designer, questions: what concepts to test, what difficulty level, principles: clear questions, plausible distractors, one correct answer)
-- [ ] T068 [US4] Create backend/src/services/skills/explain_term.py with ExplainTerm skill (persona: educational content explainer, questions: what is term, how is it used in context, principles: simple language, book context, examples)
-- [ ] T069 [US4] Document SummarizeSection skill in backend/src/services/skills/summarize_section.py with persona, questions, and principles as docstrings
-- [ ] T070 [US4] Document GenerateQuizQuestions skill in backend/src/services/skills/generate_quiz.py with persona, questions, and principles as docstrings
-- [ ] T071 [US4] Document ExplainTerm skill in backend/src/services/skills/explain_term.py with persona, questions, and principles as docstrings
-- [ ] T072 [US4] Create backend/src/api/endpoints/skills.py with POST /skills/summarize endpoint (calls SummarizeSection skill)
-- [ ] T073 [US4] Create backend/src/api/endpoints/skills.py with POST /skills/quiz endpoint (calls GenerateQuizQuestions skill)
-- [ ] T074 [US4] Create backend/src/api/endpoints/skills.py with POST /skills/explain endpoint (calls ExplainTerm skill, uses RAG to find term in book context)
-- [ ] T075 [US4] Register skills endpoints in backend/src/api/main.py
+- [x] T066 [US4] Create backend/src/services/skills/summarize_section.py with SummarizeSection skill (persona: educational content specialist, questions: what are key points, what is main message, principles: concise, accurate, educational)
+- [x] T067 [US4] Create backend/src/services/skills/generate_quiz.py with GenerateQuizQuestions skill (persona: educational assessment designer, questions: what concepts to test, what difficulty level, principles: clear questions, plausible distractors, one correct answer)
+- [x] T068 [US4] Create backend/src/services/skills/explain_term.py with ExplainTerm skill (persona: educational content explainer, questions: what is term, how is it used in context, principles: simple language, book context, examples)
+- [x] T069 [US4] Document SummarizeSection skill in backend/src/services/skills/summarize_section.py with persona, questions, and principles as docstrings
+- [x] T070 [US4] Document GenerateQuizQuestions skill in backend/src/services/skills/generate_quiz.py with persona, questions, and principles as docstrings
+- [x] T071 [US4] Document ExplainTerm skill in backend/src/services/skills/explain_term.py with persona, questions, and principles as docstrings
+- [x] T072 [US4] Create backend/src/api/endpoints/skills.py with POST /skills/summarize endpoint (calls SummarizeSection skill)
+- [x] T073 [US4] Create backend/src/api/endpoints/skills.py with POST /skills/quiz endpoint (calls GenerateQuizQuestions skill)
+- [x] T074 [US4] Create backend/src/api/endpoints/skills.py with POST /skills/explain endpoint (calls ExplainTerm skill, uses RAG to find term in book context)
+- [x] T075 [US4] Register skills endpoints in backend/src/api/main.py
 - [ ] T076 [US4] Test SummarizeSection: Invoke with book text, verify concise summary returned
 - [ ] T077 [US4] Test GenerateQuizQuestions: Invoke with book text, verify multiple-choice questions returned
 - [ ] T078 [US4] Test ExplainTerm: Invoke with term, verify explanation using book context returned
-- [ ] T079 [US4] Create ADR document in history/adr/agent-skills-design.md documenting Persona + Questions + Principles pattern usage
+- [x] T079 [US4] Create ADR document in history/adr/agent-skills-design.md documenting Persona + Questions + Principles pattern usage
 
 **Checkpoint**: All user stories should now be independently functional - book, RAG chatbot, selected-text mode, and agent skills are complete
 
@@ -172,17 +172,17 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T080 [P] Update root README.md with complete project documentation and setup instructions
+- [x] T080 [P] Update root README.md with complete project documentation and setup instructions
 - [ ] T081 [P] Add inline code comments and docstrings to all backend Python files (educational clarity)
 - [ ] T082 [P] Add inline code comments to all frontend React components (educational clarity)
 - [ ] T083 Code cleanup: Remove any unused imports, variables, or functions
 - [ ] T084 Performance optimization: Verify RAG query response times meet <5s goal (90% of requests)
-- [ ] T085 Security hardening: Verify all secrets are environment-based, no hard-coded credentials
+- [x] T085 Security hardening: Verify all secrets are environment-based, no hard-coded credentials
 - [ ] T086 Run quickstart.md validation: Follow quickstart guide step-by-step and verify all steps work
-- [ ] T087 Create ADR document in history/adr/docusaurus-choice.md documenting why Docusaurus was chosen
-- [ ] T088 Create ADR document in history/adr/fastapi-choice.md documenting why FastAPI was chosen
-- [ ] T089 Create ADR document in history/adr/rag-strategy.md documenting RAG implementation strategy and chunking approach
-- [ ] T090 Create ADR document in history/adr/deployment-approach.md documenting GitHub Pages deployment and backend hosting strategy
+- [x] T087 Create ADR document in history/adr/docusaurus-choice.md documenting why Docusaurus was chosen
+- [x] T088 Create ADR document in history/adr/fastapi-choice.md documenting why FastAPI was chosen
+- [x] T089 Create ADR document in history/adr/rag-strategy.md documenting RAG implementation strategy and chunking approach
+- [x] T090 Create ADR document in history/adr/deployment-approach.md documenting GitHub Pages deployment and backend hosting strategy
 
 ---
 

@@ -23,6 +23,7 @@ venv/
 ENV/
 env/
 .venv
+backend/venv/
 
 # Node.js (Frontend)
 node_modules/
@@ -58,4 +59,20 @@ yarn-error.log*
 # OS
 .DS_Store
 Thumbs.db
+
+# Temporary files
+structure.txt
+NUL
+*.tmp
+*.temp
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Coverage reports
+coverage/
+.nyc_output/
+*.coverage
+.coverage.*
 

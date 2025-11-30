@@ -6,15 +6,16 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AI-Driven and Spec-Driven Development',
-  tagline: 'Educational book about AI-Driven Development, Spec-Driven Development, and RAG',
+  title: 'Physical AI & Humanoid Robotics Textbook',
+  tagline: '13-Week Course on Embodied Intelligence - From ROS 2 to Vision-Language-Action',
   favicon: 'img/favicon.ico',
 
   // GitHub Pages configuration
-  url: 'https://demolinator.github.io', // GitHub username
-  baseUrl: '/Agentic-Book/', // Repository name
-  organizationName: 'Demolinator', // GitHub username
-  projectName: 'Agentic-Book', // Repository name
+  url: 'https://talal.github.io', // GitHub username
+  baseUrl: '/Hackathon/', // Repository name
+  organizationName: 'talal', // GitHub username
+  projectName: 'Hackathon', // Repository name
+  deploymentBranch: 'gh-pages', // Branch for deployment
 
   onBrokenLinks: 'throw',
   trailingSlash: false, // Explicit trailingSlash for GitHub Pages
@@ -36,9 +37,8 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/Demolinator/Agentic-Book/tree/main/',
+          editUrl: 'https://github.com/talal/Hackathon/tree/002-physical-ai-book/frontend/',
         },
         blog: false,
         theme: {
@@ -52,31 +52,108 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/physical-ai-social-card.jpg',
       navbar: {
-        title: 'AI-Driven & Spec-Driven Dev',
+        title: 'Physical AI & Humanoid Robotics',
         logo: {
-          alt: 'Hackathon Logo',
-          src: 'img/logo.svg',
+          alt: 'Physical AI Logo',
+          src: 'img/logo.png',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Book',
+            label: 'Textbook',
+          },
+          {
+            to: '/signin',
+            label: 'Sign In',
+            position: 'right',
+          },
+          {
+            to: '/signup',
+            label: 'Sign Up',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/talal/Hackathon',
+            label: 'GitHub',
+            position: 'right',
           },
         ],
       },
       footer: {
         style: 'dark',
-        links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} Hackathon Project. Built with Docusaurus.`,
+        links: [
+          {
+            title: 'Course Modules',
+            items: [
+              {
+                label: 'Introduction',
+                to: '/docs/intro',
+              },
+              {
+                label: 'Module 1: ROS 2',
+                to: '/docs/module1',
+              },
+              {
+                label: 'Module 2: Gazebo & Unity',
+                to: '/docs/module2',
+              },
+              {
+                label: 'Module 3: NVIDIA Isaac',
+                to: '/docs/module3',
+              },
+              {
+                label: 'Module 4: VLA',
+                to: '/docs/module4',
+              },
+            ],
+          },
+          {
+            title: 'Resources',
+            items: [
+              {
+                label: 'Hardware Requirements',
+                to: '/docs/hardware',
+              },
+              {
+                label: 'Weekly Breakdown',
+                to: '/docs/weekly-breakdown',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/talal/Hackathon',
+              },
+              {
+                label: 'Hackathon Submission',
+                href: 'https://github.com/talal/Hackathon/tree/002-physical-ai-book',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Course. Built for Panaversity Hackathon with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['python', 'bash', 'yaml', 'cpp', 'cmake'],
       },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+      metadata: [
+        {name: 'keywords', content: 'physical ai, humanoid robotics, ros 2, gazebo, nvidia isaac, vision-language-action, robotics course, embodied intelligence'},
+        {name: 'description', content: 'Comprehensive 13-week textbook covering Physical AI & Humanoid Robotics: ROS 2, Gazebo/Unity simulation, NVIDIA Isaac platform, and Vision-Language-Action systems.'},
+      ],
     }),
 };
 

@@ -4,43 +4,70 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Module 1: ROS 2 - The Robotic Nervous System',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Master ROS 2 architecture, nodes, topics, services, and actions. Build Python-based
+        ROS 2 packages and define humanoid robot structures using URDF. Learn the foundational
+        software framework powering modern robotics.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Module 2: Gazebo & Unity - The Digital Twin',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Simulate robot behaviors in Gazebo physics engine and Unity for photorealistic rendering.
+        Test sensors (LiDAR, depth cameras, IMUs) and physics (gravity, collisions) safely
+        before real-world deployment.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Module 3: NVIDIA Isaac - The AI-Robot Brain',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Explore Isaac Sim for synthetic data generation and Isaac ROS for hardware-accelerated
+        perception (VSLAM, object detection). Implement autonomous navigation with Nav2 for
+        bipedal humanoid robots.
+      </>
+    ),
+  },
+  {
+    title: 'Module 4: Vision-Language-Action (VLA)',
+    description: (
+      <>
+        Integrate voice commands (OpenAI Whisper), cognitive planning (LLMs), and robot actions
+        into autonomous systems. Complete the capstone: a humanoid that understands natural
+        language and navigates to accomplish tasks.
+      </>
+    ),
+  },
+  {
+    title: 'Interactive RAG Chatbot',
+    description: (
+      <>
+        Ask questions about any chapter and receive AI-powered answers grounded in textbook
+        content. Select specific code examples or technical sections for targeted explanations.
+        Powered by OpenAI and Qdrant vector search.
+      </>
+    ),
+  },
+  {
+    title: 'Hardware Requirements & Alternatives',
+    description: (
+      <>
+        Detailed specifications for workstations (RTX 4070 Ti+, Ubuntu 22.04), Jetson Orin kits,
+        RealSense cameras, and robot platforms (Unitree Go2/G1). Cloud-based alternatives for
+        students without access to high-end hardware.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({title, description}) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
