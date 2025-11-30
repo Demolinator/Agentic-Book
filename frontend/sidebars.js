@@ -63,13 +63,14 @@ const sidebars = {
       label: 'Module 4: Vision-Language-Action',
       collapsed: true,
       items: [
-        'module4/module4-index',
-        // Temporarily disabled due to math expression errors - will fix later
+        'module4/README',
+        // Temporarily disabled - files were moved to .bak due to build errors
+        // 'module4/module4-index',
         // 'module4/sensor-fusion',
         // 'module4/motion-planning',
         // 'module4/control-systems',
         // 'module4/computer-vision',
-        'module4/capstone',
+        // 'module4/capstone',
       ],
     },
     {
